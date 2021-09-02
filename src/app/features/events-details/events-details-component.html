@@ -1,0 +1,55 @@
+<div class="container">
+
+  <div class="d-flex justify-content-center w-100">
+    <div class="flex align-items-center w-100">
+      <div class="flex-column">
+        <h2>{{event?.name}} </h2>
+      </div>
+      <div *ngIf="event?.pleaseNote" class="flex-column">
+        <p>
+          <b>Important Event Info:</b> {{ event?.pleaseNote }}</p>
+      </div>
+      <hr>
+      <div class="flex-column">
+        <p>
+          <b>Date:</b> {{event?.dates.start.dateTime | date:'mediumDate':'UTC -10'}}</p>
+        <p>
+          <b>Time:</b> {{event?.dates.start.localTime }}</p>
+
+        <p>
+          <b>Venue:</b>
+          <a href="{{event?._embedded.venues[0].url}}" target="_blank"> {{event?._embedded.venues[0].name }} </a>
+          <br>
+          <span class="align-location"> {{ event?._embedded.venues[0].city.name }} , {{event?._embedded.venues[0].state.stateCode}}
+          </span>
+        </p>
+      </div>
+      <hr>
+      <div class="flex-column">
+        <p>
+          <b>Lineup </b>
+        </p>
+        <div class="flex-row">
+          <div class="flex-column">
+            <a href="{{event?._embedded.attractions[0].url}}" target="_blank">
+              <img [src]=" event?._embedded.attractions[0].images[0].url" [alt]="event?.name" class="event-image mr-2">
+            </a>
+            <a href="{{event?._embedded.attractions[1].url}}" target="_blank">
+              <img [src]=" event?._embedded.attractions[1].images[0].url" [alt]="event?.name" class="event-image">
+            </a>
+
+          </div>
+
+        </div>
+      </div>
+
+      <div class="flex-column mt-3">
+        <p>
+          <b>Ticket Limit </b>
+          <br>
+          <span>{{ event?.ticketLimit.info }}</span>
+        </p>
+      </div>
+    </div>
+
+  </div>

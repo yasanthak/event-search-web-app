@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+.hovercard:hover {
+  cursor: pointer;
+}
+
+.container {
+  padding-top: 10px;
+}
+
+.pointable {
+  cursor: pointer;
+}
