@@ -1,0 +1,19 @@
+<div class="container">
+
+  <div class="d-flex justify-content-center w-100 ml-3">
+    <div class="flex align-items-center w-100">
+
+      <form class="form-inline" id="searchForm" (ngSubmit)="searchEvents(searchTerm)">
+        <input [(ngModel)]="searchTerm" name="searchTerm" type="text" class="mr-sm-2 form-control w-75" placeholder="Search for events">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+
+  </div>
+  <div class="row p-3">
+    <div *ngFor="let event of events" class="d-flex">
+      <event-card [event]="event"></event-card>
+    </div>
+  </div>
+  <error-alert *ngIf="error" [errorMessege]="error"></error-alert>
+</div>

@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import {
   EventListComponent,
   EventsDetailsComponent,
+  SearchEventsComponent,
   EventListResolver,
   EventResolver
 
@@ -10,7 +11,8 @@ import {
 
 const routes: Routes = [
   { path: 'events', component: EventListComponent, resolve: { events: EventListResolver } },
-  { path: 'events/:id', component: EventsDetailsComponent, resolve: { event: EventResolver } }
+  { path: 'events/:id', component: EventsDetailsComponent, resolve: { event: EventResolver } },
+  { path: 'search', component: SearchEventsComponent },
 ]
 
 @NgModule({

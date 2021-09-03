@@ -4,8 +4,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav/nav-bar.component';
-import { EventListComponent, EventCardComponent, EventListResolver, EventResolver, EventsDetailsComponent } from './features';
+import { EventListComponent, EventCardComponent, EventListResolver, EventResolver, EventsDetailsComponent, SearchEventsComponent, ErrorAlertComponent } from './features';
 import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -13,7 +14,9 @@ import { HttpClientModule } from '@angular/common/http';
     NavBarComponent,
     EventListComponent,
     EventCardComponent,
-    EventsDetailsComponent
+    EventsDetailsComponent,
+    SearchEventsComponent,
+    ErrorAlertComponent
   ],
   imports: [
     BrowserModule,

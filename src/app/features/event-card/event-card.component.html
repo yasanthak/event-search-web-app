@@ -1,7 +1,7 @@
 <div class="d-flex align-items-center justify-content-around">
   <div class="card bg-light mb-3 m-3">
     <div class="card-header">{{event?.name | uppercase}}
-      <a [routerLink]="['/events', event.id]" class="badge badge-light">More Info</a>
+      <a [routerLink]="['/events', event.id]" class="badge badge-info">More Info</a>
     </div>
     <div class="card-body">
       <div>Date: {{event?.dates.start.dateTime | date:'mediumDate':'UTC -10'}}

@@ -12,14 +12,20 @@ import { ActivatedRoute } from '@angular/router';
 export class EventListComponent implements OnInit {
 
   events: any[]
+  error: string;
 
   constructor(private route: ActivatedRoute) {
 
   }
 
   ngOnInit() {
-    const events = this.route.snapshot.data['events']
-    this.events = events;
+    this.route.data.subscribe(data => {
+      if (data.events.events) {
+        this.events = data.events.events;
+      } else {
+        this.error = data.events.error;
+      }
+    });
   }
 
 

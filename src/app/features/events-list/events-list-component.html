@@ -1,4 +1,4 @@
-<div>
+<div class="container">
   <h1>Upcoming Events</h1>
   <hr/>
   <div class="row p-3">
@@ -6,4 +6,5 @@
       <event-card [event]="event"></event-card>
     </div>
   </div>
+  <error-alert *ngIf="error" [errorMessege]="error"></error-alert>
 </div>
