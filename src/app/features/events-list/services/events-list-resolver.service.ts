@@ -18,7 +18,5 @@ export class EventListResolver implements Resolve<any> {
         return of({ error: error });
       })
     )
-    // return this.eventService.getEvents();
-
   }
 }

@@ -11,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 
 export class EventListComponent implements OnInit {
 
-  events: any[]
+  events: any[] // Better to have typings for the events list
   error: string;
 
   constructor(private route: ActivatedRoute) {
@@ -22,6 +22,7 @@ export class EventListComponent implements OnInit {
     this.route.data.subscribe(data => {
       if (data.events.events) {
         this.events = data.events.events;
+        this.error = '';
       } else {
         this.error = data.events.error;
       }

@@ -25,7 +25,7 @@
         </p>
       </div>
       <hr>
-      <div class="flex-column">
+      <div *ngIf="event?._embedded?.attractions" class="flex-column">
         <p>
           <b>Lineup </b>
         </p>
@@ -43,7 +43,7 @@
         </div>
       </div>
 
-      <div class="flex-column mt-3">
+      <div *ngIf="event?.ticketLimit" class="flex-column mt-3">
         <p>
           <b>Ticket Limit </b>
           <br>
